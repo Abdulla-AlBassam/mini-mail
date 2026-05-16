@@ -4,7 +4,6 @@ My final-year dissertation project: a local email system with a cascade ML spam 
 
 The mail stack runs in Docker (Postfix, Dovecot, Roundcube, and a small in-network DNS) and every inbound message passes through a Postfix milter that calls a two-stage classifier. A TF-IDF and Logistic Regression baseline handles the easy cases, and DistilBERT is only invoked when the baseline is uncertain. The cascade keeps the fast model in front of the slow one without losing the slow one's accuracy on the harder messages.
 
-**Author:** Abdulla AlBassam
 
 ## What's in this repo
 
