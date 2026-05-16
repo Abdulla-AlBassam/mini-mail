@@ -1,0 +1,2 @@
+ssl = required
+disable_plaintext_auth = yes

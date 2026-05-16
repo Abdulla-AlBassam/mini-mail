@@ -1,0 +1,11 @@
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE # if true, privledge escalation issues
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = mailserver
+DNS.2 = mailserver.docker.local
+DNS.3 = localhost
+DNS.4 = mail.local
+IP.1 = 127.0.0.1 

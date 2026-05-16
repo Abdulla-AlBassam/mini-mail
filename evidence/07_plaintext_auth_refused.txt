@@ -1,0 +1,13 @@
+=== Attempting LOGIN over plain SMTP/587 (before STARTTLS) ===
+220 mailserver.docker.local ESMTP
+250-mailserver.docker.local
+250-PIPELINING
+250-SIZE 10240000
+250-ETRN
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+530 5.7.0 Must issue a STARTTLS command first
+221 2.0.0 Bye

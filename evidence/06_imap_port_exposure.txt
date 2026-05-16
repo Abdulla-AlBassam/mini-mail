@@ -1,0 +1,7 @@
+=== TCP/143 reachable? (should fail or refuse) ===
+nc: connectx to localhost port 143 (tcp) failed: Connection refused
+nc: connectx to localhost port 143 (tcp) failed: Connection refused
+(connection failed — expected)
+
+=== TCP/993 reachable? (should succeed) ===
+Connection to localhost port 993 [tcp/imaps] succeeded!

@@ -1,0 +1,7 @@
+2026-04-29T20:52:24.044596+00:00 mailserver postfix/submission/smtpd[2461]: 0ADB138E9F: client=unknown[172.20.0.1], sasl_method=LOGIN, sasl_username=viserys@mail.local
+2026-04-29T20:52:24.046081+00:00 mailserver postfix/sender-cleanup/cleanup[2609]: 0ADB138E9F: prepend: header Message-Id: <20260429215223.020811@abdullas-macbook-air-2.local> from unknown[172.20.0.1]; from=<viserys@mail.local> to=<abdulla@mail.local> proto=ESMTP helo=<abdullas-macbook-air-2.local>: X-MS-Reactions: disallow
+2026-04-29T20:52:24.046088+00:00 mailserver postfix/sender-cleanup/cleanup[2609]: 0ADB138E9F: message-id=<20260429215223.020811@abdullas-macbook-air-2.local>
+2026-04-29T20:52:24.256734+00:00 mailserver opendkim[183]: 0ADB138E9F: DKIM-Signature field added (s=mail, d=mail.local)
+2026-04-29T20:52:24.298588+00:00 mailserver postfix/qmgr[282]: 0ADB138E9F: from=<viserys@mail.local>, size=296, nrcpt=1 (queue active)
+2026-04-29T20:52:24.325894+00:00 mailserver postfix/lmtp[2610]: 0ADB138E9F: to=<abdulla@mail.local>, relay=mailserver.docker.local[/var/run/dovecot/lmtp], delay=0.3, delays=0.27/0.01/0.01/0.01, dsn=2.0.0, status=sent (250 2.0.0 <abdulla@mail.local> k+fyEohv8mkzCgAAb7l45A Saved)
+2026-04-29T20:52:24.325966+00:00 mailserver postfix/qmgr[282]: 0ADB138E9F: removed

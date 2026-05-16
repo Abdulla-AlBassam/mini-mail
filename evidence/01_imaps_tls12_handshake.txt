@@ -1,0 +1,97 @@
+Connecting to ::1
+Can't use SSL_get_servername
+depth=0 C=GB, ST=Tyne and Wear, L=Newcastle, O=Northumbria University, OU=Dissertation Project, CN=mailserver
+verify error:num=20:unable to get local issuer certificate
+verify return:1
+depth=0 C=GB, ST=Tyne and Wear, L=Newcastle, O=Northumbria University, OU=Dissertation Project, CN=mailserver
+verify error:num=21:unable to verify the first certificate
+verify return:1
+depth=0 C=GB, ST=Tyne and Wear, L=Newcastle, O=Northumbria University, OU=Dissertation Project, CN=mailserver
+verify return:1
+CONNECTED(00000005)
+---
+Certificate chain
+ 0 s:C=GB, ST=Tyne and Wear, L=Newcastle, O=Northumbria University, OU=Dissertation Project, CN=mailserver
+   i:C=GB, ST=Tyne and Wear, L=Newcastle, O=Northumbria University, OU=Dissertation CA, CN=Dissertation Root CA
+   a:PKEY: RSA, 2048 (bit); sigalg: sha256WithRSAEncryption
+   v:NotBefore: Jan 25 20:08:40 2026 GMT; NotAfter: Jan 25 20:08:40 2027 GMT
+-----BEGIN CERTIFICATE-----
+MIIFWjCCA0KgAwIBAgIUeYXgXfSgtMD1VIrimFxNSAfN8UUwDQYJKoZIhvcNAQEL
+BQAwgZMxCzAJBgNVBAYTAkdCMRYwFAYDVQQIDA1UeW5lIGFuZCBXZWFyMRIwEAYD
+VQQHDAlOZXdjYXN0bGUxHzAdBgNVBAoMFk5vcnRodW1icmlhIFVuaXZlcnNpdHkx
+GDAWBgNVBAsMD0Rpc3NlcnRhdGlvbiBDQTEdMBsGA1UEAwwURGlzc2VydGF0aW9u
+IFJvb3QgQ0EwHhcNMjYwMTI1MjAwODQwWhcNMjcwMTI1MjAwODQwWjCBjjELMAkG
+A1UEBhMCR0IxFjAUBgNVBAgMDVR5bmUgYW5kIFdlYXIxEjAQBgNVBAcMCU5ld2Nh
+c3RsZTEfMB0GA1UECgwWTm9ydGh1bWJyaWEgVW5pdmVyc2l0eTEdMBsGA1UECwwU
+RGlzc2VydGF0aW9uIFByb2plY3QxEzARBgNVBAMMCm1haWxzZXJ2ZXIwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCsGTASntGQfj2+7HftAUMAY8YtF/wg
+/Lpv4vUMi8yxlCP2okaCwmG1zb+JeUKccsLDkSk653lr8WycUOdeS4vYR/8Fwc3E
+Sl2E56wUzbx1yP4GJWaZwt6FHzySCNi6Df9PUOG/0FpZ6ibH2Md8eJ+WUJCONkEC
+aNU9LSGnFbyDJbLLgafmIdC3dgdFiK4HYVO1Z1AzwAaWhi05BoL/3h6Lb/M1S8U7
+jnIl92OBdoAi70DbWqvIGt4z6gFtW18nmsEWaEmo25a3Q1y06YK2QH0smek6D7Fw
+7i/hMAS2Ho8LgiKsbBy1rM0c11JHbyJDJl+2OWQvmVxEa/WpGw5ry7rjAgMBAAGj
+gagwgaUwHwYDVR0jBBgwFoAUn/V/CK5Tb6mlum1Su0d3xzfVMvEwCQYDVR0TBAIw
+ADALBgNVHQ8EBAMCBPAwSwYDVR0RBEQwQoIKbWFpbHNlcnZlcoIXbWFpbHNlcnZl
+ci5kb2NrZXIubG9jYWyCCWxvY2FsaG9zdIIKbWFpbC5sb2NhbIcEfwAAATAdBgNV
+HQ4EFgQUHgXlEQJ4ImRKNfzPEGfzoPRZxsIwDQYJKoZIhvcNAQELBQADggIBAJr0
+r9UhsCV2He1A+UVm7PiP2jJN1+56EovdRIqEUixETBl+yf8/ioI3q5a+VAO/2RCB
+pFEdD/GgOgnrNQ7A7k4xreuQexnMSwL0ddHMovC0aLTOhGsl6exgvTOxKALRogLm
+b6ibgRCnfusT3IJmJXTqKIswnUfzkJjvO/CXh0to467vRMZ9ZejR05EJZtSLIMLc
+3UHWfLnwhFFX6ao/ip2Thdjg9zs2POoTlNNE3lyy+y918GZcymX8mBcnM8Er/oVq
+PricI6EZ/tkdJCOR+LN/++7fANRcAtAQ1iKyLhvPshKPjoAkZtTtbtOWXYAEXa4N
+Niy0tKiR5QRGNcNwonh20pr6Ol+NiMP1P5KbF2SKPFgbsBILsjy67uSwuW+62WqR
+Q4JXb5feesnMgaxvOZgK3ZpxnFO05A0UGYerNbNrVFL8QA9nM/Pae34kiBQEdiy9
+wGRMAtCSovN5R3iQxYODFtPfSl2ReL/QdpmpCZ3nmNGuypL84s/ERs9qvL3zp+0t
+I7nNw7mZFDnfAVKM/5I7a9BQh+l5oyFY1AsRJLoxfOjpVbOAQedjo5RH8QpCLHUp
+lpVcJRM+g54kIT3/tp+enjLWpqPwWRidMqA9Y7M6HyDgZvHMxZ11sDpKw1Gm+QdR
+EaMpPQDMOs9DD+Tj6PYF8tZx3nO/JiIk8MokleEt
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=C=GB, ST=Tyne and Wear, L=Newcastle, O=Northumbria University, OU=Dissertation Project, CN=mailserver
+issuer=C=GB, ST=Tyne and Wear, L=Newcastle, O=Northumbria University, OU=Dissertation CA, CN=Dissertation Root CA
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: rsa_pss_rsae_sha256
+Peer Temp Key: X25519, 253 bits
+---
+SSL handshake has read 1999 bytes and written 282 bytes
+Verification error: unable to verify the first certificate
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES128-GCM-SHA256
+Protocol: TLSv1.2
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES128-GCM-SHA256
+    Session-ID: E5881020A1AC240D83B80CF0CC8A2472E66220483E812780A5F1AB75CE073B56
+    Session-ID-ctx: 
+    Master-Key: 836803ECB781E6F766B2960C5F120665A5DE6A4DC92693728A8920F4B0258CEFFE9A76C69988709A507EF6BA05848BF4
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 7200 (seconds)
+    TLS session ticket:
+    0000 - ca d5 e0 75 f5 d2 d0 bd-0f ae 7b 58 5a ee cc b3   ...u......{XZ...
+    0010 - 81 33 88 e3 cd 5c f0 38-9c 5d 44 c6 28 03 46 cc   .3...\.8.]D.(.F.
+    0020 - ae be 3a 7d d3 d1 2a cc-07 bf 0d 06 80 d4 d6 e9   ..:}..*.........
+    0030 - 6f 65 d1 7e 67 ab da 32-65 ce 52 9a 36 ca b7 e6   oe.~g..2e.R.6...
+    0040 - ec 7a a1 63 d0 64 f1 9b-b8 74 55 de 92 f6 b9 c1   .z.c.d...tU.....
+    0050 - 55 63 95 31 93 67 29 a1-49 1a c0 a3 13 3d 04 f0   Uc.1.g).I....=..
+    0060 - bc a9 41 1e 40 e9 ad ee-7d 4c f8 5f a8 ee a3 50   ..A.@...}L._...P
+    0070 - 33 69 dd 42 b0 99 1e af-a8 a6 c9 9b 7d 68 60 b9   3i.B........}h`.
+    0080 - 47 2b a6 de 8a aa 51 6f-eb 2a d6 a0 28 f5 b0 e5   G+....Qo.*..(...
+    0090 - 93 58 62 d2 5e 3b 4a d1-78 c7 76 57 fd a2 6d c6   .Xb.^;J.x.vW..m.
+
+    Start Time: 1777494693
+    Timeout   : 7200 (sec)
+    Verify return code: 21 (unable to verify the first certificate)
+    Extended master secret: yes
+---
+* OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN AUTH=LOGIN] Dovecot (Debian) ready.
+DONE

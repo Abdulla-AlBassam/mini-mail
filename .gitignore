@@ -1,0 +1,46 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# ML Models (too large for git)
+ml/models/*.pkl
+ml/models/*.pt
+ml/models/*.bin
+ml/models/distilbert_spam_classifier/
+
+# Large datasets
+ml/data/*.csv
+ml/data/*.json
+ml/data/raw/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Docker
+*.log
+
+# Evaluation outputs (regeneratable)
+evaluation/*.png
+evaluation/*.pdf
+evaluation/*.csv
+
+

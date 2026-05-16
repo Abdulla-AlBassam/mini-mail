@@ -1,0 +1,138 @@
+<mxfile host="app.diagrams.net" modified="2026-04-19" agent="dissertation">
+  <diagram id="ml_pipeline" name="ML Pipeline">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="Machine Learning Evaluation Pipeline — Training and Adversarial Robustness" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="10" width="1420" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Stage labels at top -->
+        <mxCell id="l1" value="DATA" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontStyle=1;fontColor=#888;" vertex="1" parent="1">
+          <mxGeometry x="60" y="50" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" value="PREPROCESSING" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontStyle=1;fontColor=#888;" vertex="1" parent="1">
+          <mxGeometry x="250" y="50" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" value="SPLIT" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontStyle=1;fontColor=#888;" vertex="1" parent="1">
+          <mxGeometry x="480" y="50" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" value="TRAINING" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontStyle=1;fontColor=#888;" vertex="1" parent="1">
+          <mxGeometry x="650" y="50" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l5" value="EVALUATION" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontStyle=1;fontColor=#888;" vertex="1" parent="1">
+          <mxGeometry x="970" y="50" width="260" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l6" value="COMPARISON" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontStyle=1;fontColor=#888;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="50" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Dataset -->
+        <mxCell id="ds" value="&lt;b&gt;Enron Spam Dataset&lt;/b&gt;&lt;br&gt;33,662 emails after cleaning&lt;br&gt;50.9% spam / 49.1% ham&lt;br&gt;&lt;i&gt;Kaggle&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="90" width="160" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Preprocessing -->
+        <mxCell id="pre" value="&lt;b&gt;preprocessing.py&lt;/b&gt;&lt;br&gt;clean_text()&lt;br&gt;• lowercase&lt;br&gt;• strip headers, URLs, HTML&lt;br&gt;• non-alpha removal&lt;br&gt;• whitespace normalise&lt;br&gt;• combine Subject + Message" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;verticalAlign=top;align=left;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="250" y="90" width="200" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Split -->
+        <mxCell id="sp" value="&lt;b&gt;80 / 20 stratified split&lt;/b&gt;&lt;br&gt;random_state=42&lt;br&gt;&lt;br&gt;Train: 26,929&lt;br&gt;Test: 6,733" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="480" y="90" width="140" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Training block -->
+        <mxCell id="tr" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#cccccc;strokeDashArray=4,4;fontSize=11;verticalAlign=top;align=left;" vertex="1" parent="1">
+          <mxGeometry x="650" y="90" width="280" height="330" as="geometry" />
+        </mxCell>
+
+        <!-- Baseline training -->
+        <mxCell id="blt" value="&lt;b&gt;Baseline training&lt;/b&gt;&lt;br&gt;TF-IDF vectoriser&lt;br&gt;10,000 features, unigram+bigram&lt;br&gt;min_df=2, max_df=0.95&lt;br&gt;sublinear TF, English stopwords&lt;br&gt;→ Logistic Regression&lt;br&gt;L2, C=1.0, lbfgs, max_iter=1000&lt;br&gt;5-fold CV" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="670" y="110" width="240" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- DistilBERT training -->
+        <mxCell id="dbt" value="&lt;b&gt;DistilBERT training&lt;/b&gt;&lt;br&gt;distilbert-base-uncased&lt;br&gt;67M params, 768-dim, 6 layers&lt;br&gt;WordPiece tokenisation&lt;br&gt;Fine-tune 3 epochs on T4 GPU&lt;br&gt;lr=2e-5, batch 16&lt;br&gt;seed=42" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="670" y="270" width="240" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Trained models -->
+        <mxCell id="bm" value="&lt;b&gt;TF-IDF + LR&lt;/b&gt;&lt;br&gt;(baseline_*.pkl)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="970" y="130" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dbm" value="&lt;b&gt;DistilBERT&lt;/b&gt;&lt;br&gt;(distilbert_spam_classifier/)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="970" y="310" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Clean eval path -->
+        <mxCell id="ct" value="&lt;b&gt;Clean test set&lt;/b&gt;&lt;br&gt;6,733 emails" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="480" y="440" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Adversarial attacks -->
+        <mxCell id="atk" value="&lt;b&gt;Adversarial attack module&lt;/b&gt;&lt;br&gt;attacks/generate_adversarial.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b85450;strokeDashArray=4,4;fontSize=11;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="530" width="370" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="&lt;b&gt;Character perturbation&lt;/b&gt;&lt;br&gt;swap / insert / delete / substitute&lt;br&gt;light 8%  medium 16%  heavy 31%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="270" y="570" width="330" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="&lt;b&gt;Synonym substitution&lt;/b&gt;&lt;br&gt;WordNet lookup on content words&lt;br&gt;light 1%  medium 2%  heavy 3.2%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="270" y="635" width="330" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="&lt;b&gt;Text dilution&lt;/b&gt; (good-word injection)&lt;br&gt;inject benign professional vocabulary&lt;br&gt;light 3 words  medium 7  heavy 12" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="270" y="700" width="330" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- 9 adversarial test sets -->
+        <mxCell id="adv" value="&lt;b&gt;9 adversarial test sets&lt;/b&gt;&lt;br&gt;(3 attacks × 3 intensities)&lt;br&gt;test_char_light / medium / heavy&lt;br&gt;test_synonym_light / medium / heavy&lt;br&gt;test_dilution_light / medium / heavy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;verticalAlign=top;align=left;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="670" y="580" width="260" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Metrics boxes -->
+        <mxCell id="met_clean" value="&lt;b&gt;Clean metrics&lt;/b&gt;&lt;br&gt;Accuracy, Precision, Recall,&lt;br&gt;F1, ROC-AUC, confusion matrix&lt;br&gt;&lt;br&gt;LR 99.09% / DB 99.57%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8e8e8;strokeColor=#888;fontSize=10;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="110" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="met_adv" value="&lt;b&gt;Adversarial metrics&lt;/b&gt;&lt;br&gt;same five metrics per (model × attack × intensity)&lt;br&gt;&lt;br&gt;Heavy dilution drops LR to 89.23%,&lt;br&gt;DB to 96.81% (Δ = 7.58 pp)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8e8e8;strokeColor=#888;fontSize=10;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="580" width="280" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Final comparison -->
+        <mxCell id="cmp" value="&lt;b&gt;Comparative robustness analysis&lt;/b&gt;&lt;br&gt;Clean accuracy vs adversarial accuracy&lt;br&gt;Degradation per attack family&lt;br&gt;Answers the research question:&lt;br&gt;&lt;i&gt;does DistilBERT retain more under attack?&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d4edda;strokeColor=#28a745;fontSize=11;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="350" width="280" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="ds" target="pre"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="pre" target="sp"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="train 26,929" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;fontSize=10;" edge="1" parent="1" source="sp" target="blt"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" value="train 26,929" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;fontSize=10;" edge="1" parent="1" source="sp" target="dbt"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;" edge="1" parent="1" source="blt" target="bm"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;" edge="1" parent="1" source="dbt" target="dbm"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e7" value="test 6,733" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;fontSize=10;" edge="1" parent="1" source="sp" target="ct"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" value="apply attacks" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;strokeColor=#b85450;fontSize=10;" edge="1" parent="1" source="ct" target="atk"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;strokeColor=#b85450;" edge="1" parent="1" source="atk" target="adv"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e10" value="clean eval" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;fontSize=10;" edge="1" parent="1" source="ct" target="bm"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" value="clean eval" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;fontSize=10;" edge="1" parent="1" source="ct" target="dbm"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;strokeColor=#d6b656;" edge="1" parent="1" source="adv" target="bm"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;strokeColor=#d6b656;" edge="1" parent="1" source="adv" target="dbm"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;" edge="1" parent="1" source="bm" target="met_clean"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;" edge="1" parent="1" source="dbm" target="met_clean"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;strokeColor=#b85450;" edge="1" parent="1" source="bm" target="met_adv"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;endArrow=classic;strokeColor=#b85450;" edge="1" parent="1" source="dbm" target="met_adv"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="met_clean" target="cmp"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="met_adv" target="cmp"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="caption" value="Figure Y: ML evaluation pipeline. The baseline (TF-IDF + Logistic Regression) and transformer (fine-tuned DistilBERT) are trained on an identical 80/20 stratified split of the Enron Spam corpus. The held-out test set is evaluated directly for clean-data performance and also perturbed by three attack families at three intensity levels, producing nine adversarial test sets per model. Identical metrics across all conditions support a direct robustness comparison." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="60" y="810" width="1400" height="60" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

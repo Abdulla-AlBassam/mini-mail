@@ -1,0 +1,125 @@
+# Docker Compose for the dissertation testbed.
+# Four services on one bridge network:
+#   - dns:        local resolver so mail.local and friends resolve inside the
+#                 compose network (avoids polluting /etc/hosts on the host)
+#   - mailserver: docker-mailserver image, Postfix + Dovecot + OpenDKIM/DMARC
+#   - roundcube:  webmail UI on http://localhost:8080
+#   - spamfilter: my custom milter (./milter), runs the cascade classifier
+
+services:
+  dns:
+    image: andyshinn/dnsmasq:latest
+    container_name: dns
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - ./docker/dns/dnsmasq.conf:/etc/dnsmasq.conf:ro
+    networks:
+      mailnet:
+        ipv4_address: 172.20.0.2
+    restart: unless-stopped
+
+  mailserver:
+    image: ghcr.io/docker-mailserver/docker-mailserver:latest
+    container_name: mailserver
+    hostname: mailserver
+    domainname: docker.local
+    ports:
+      - "25:25"
+      - "587:587"
+      - "993:993"
+    volumes:
+      - mail-data:/var/mail/
+      - mail-state:/var/mail-state/
+      - mail-logs:/var/log/mail/
+      - ./docker/mailserver/config/:/tmp/docker-mailserver/
+    environment:
+      - ENABLE_SPAMASSASSIN=0
+      - ENABLE_CLAMAV=0
+      - ENABLE_FAIL2BAN=1
+      - ENABLE_POSTGREY=0
+      - ENABLE_AMAVIS=0
+      - ENABLE_OPENDKIM=1
+      - ENABLE_OPENDMARC=1
+      - SSL_TYPE=manual
+      - SSL_CERT_PATH=/tmp/docker-mailserver/ssl/cert.pem
+      - SSL_KEY_PATH=/tmp/docker-mailserver/ssl/key.pem
+      - ENABLE_SASLAUTHD=0
+      - PERMIT_DOCKER=network # OK on a local testbed, NOT on the public internet
+      - LOG_LEVEL=info
+      - POSTFIX_INET_PROTOCOLS=ipv4
+      - OVERRIDE_HOSTNAME=mailserver.docker.local
+    dns:
+      - 172.20.0.2
+    depends_on:
+      - dns
+    networks:
+      mailnet:
+        ipv4_address: 172.20.0.10
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+
+  roundcube:
+    image: roundcube/roundcubemail:latest
+    container_name: roundcube
+    ports:
+      - "8080:80"
+    volumes:
+      - ./docker/roundcube/config.inc.php:/var/roundcube/config/custom.inc.php:ro
+      - ./docker/mailserver/config/ssl/ca/ca.crt:/var/roundcube/config/ca.crt:ro
+    environment:
+      - ROUNDCUBEMAIL_DEFAULT_HOST=ssl://mailserver
+      - ROUNDCUBEMAIL_DEFAULT_PORT=993
+      - ROUNDCUBEMAIL_SMTP_SERVER=mailserver
+      - ROUNDCUBEMAIL_SMTP_PORT=587
+    dns:
+      - 172.20.0.2
+    depends_on:
+      - mailserver
+    networks:
+      mailnet:
+        ipv4_address: 172.20.0.20
+    restart: unless-stopped
+
+  spamfilter:
+    build:
+      context: ./milter
+      dockerfile: Dockerfile
+    container_name: spamfilter
+    volumes:
+      - ./ml:/app/ml:ro
+    environment:
+      - CASCADE_THRESHOLD=0.90
+      - MILTER_PORT=9900
+      - LOG_LEVEL=INFO
+      # Pin BLAS and OMP thread pools to a single thread. These MUST be
+      # set in the container env, not via os.environ from Python: libgomp
+      # reads OMP_NUM_THREADS exactly once, when it is loaded during
+      # `import torch`, so any later assignment from Python is ignored.
+      # Setting it to 1 here avoids a libgomp/OpenMP first-init deadlock
+      # that hits when PyTorch's intra-op pool is first created on a
+      # libmilter worker pthread under x86_64 emulation. Full forensic
+      # writeup: milter/diagnostics/threading_deadlock.md
+      - OMP_NUM_THREADS=1
+      - MKL_NUM_THREADS=1
+      - OPENBLAS_NUM_THREADS=1
+      - TOKENIZERS_PARALLELISM=false
+    depends_on:
+      - mailserver
+    networks:
+      mailnet:
+        ipv4_address: 172.20.0.30
+    restart: unless-stopped
+
+networks:
+  mailnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+
+volumes:
+  mail-data:
+  mail-state:
+  mail-logs:

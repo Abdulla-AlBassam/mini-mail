@@ -1,0 +1,253 @@
+hdr:
+Return-Path: <viserys@mail.local>
+Delivered-To: abdulla@mail.local
+Received: from mailserver.docker.local
+	by mailserver.docker.local with LMTP
+	id cXzINXpldmm3BAAAb7l45A
+	(envelope-from <viserys@mail.local>)
+	for <abdulla@mail.local>; Sun, 25 Jan 2026 18:48:26 +0000
+Received: from mailserver.docker.local (localhost [127.0.0.1])
+	by mailserver.docker.local (Postfix) with ESMTP id D9BA44FE1
+	for <abdulla@mail.local>; Sun, 25 Jan 2026 18:48:26 +0000 (UTC)
+Date: Sun, 25 Jan 2026 18:48:26 +0000
+To: abdulla@mail.local
+From: viserys@mail.local
+Subject: Hello from Viserys
+Message-Id: <20260125184826.001194@mailserver.docker.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+hdr:
+Return-Path: <colleague@mail.local>
+Delivered-To: abdulla@mail.local
+Received: from mailserver.docker.local
+	by mailserver.docker.local with LMTP
+	id uB8CDdKr3Wn1AwAAb7l45A
+	(envelope-from <colleague@mail.local>)
+	for <abdulla@mail.local>; Tue, 14 Apr 2026 02:52:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.local; s=mail;
+	t=1776135122; bh=he5ljwrXt2FFTpQFenQwBM1wMIgz4+1bGP0bwKc0gRY=;
+	h=Subject:From:To;
+	b=Zu8hk7N95Zb16wSQLRquSVsnv+viCRDvj+ARUFrkFKgTaioMtCRYE0l4JdnowFhdD
+	 iwUR+56z/RW5WvE9bqzy02htaubj1u81IuRV9GpI8LtBOuBzttOcXm+W5ZUVKBpa39
+	 W6qeIKnEK19dkhMZHQqu+BZswzyX/ZJ1mcBawhJEJbFBoX1o2iaTJ+NCgh8EVOHiFx
+	 Z+crSTMqc7nMunALm3zGHtAwyzZ75VDkoRqrvtFaoy2aDpRPzbrhBWBgeTZR8PFrhg
+	 sFG14LfSgKZRdc8jGlSP+l7M8cH6KN3QFQDzFpbgeNEVKyzI2Dm3Z+oYVawFN6dGPh
+	 l+zJVmdxdsUig==
+Received: from [172.20.0.30] (spamfilter.dissertation-project_mailnet [172.20.0.30])
+	by mailserver.docker.local (Postfix) with ESMTP id 158691208A
+	for <abdulla@mail.local>; Tue, 14 Apr 2026 02:52:02 +0000 (UTC)
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Re: Meeting Notes
+From: colleague@mail.local
+To: abdulla@mail.local
+X-Test-ID: manual-ham-test-001
+X-Spam-Status: No
+X-Spam-Score: 0.0377
+X-Spam-Model: baseline
+
+hdr:
+Return-Path: <viserys@mail.local>
+Delivered-To: abdulla@mail.local
+Received: from mailserver.docker.local
+	by mailserver.docker.local with LMTP
+	id b8CNIcJQ7WnGBwAAb7l45A
+	(envelope-from <viserys@mail.local>)
+	for <abdulla@mail.local>; Sat, 25 Apr 2026 23:39:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.local; s=mail;
+	t=1777160386; bh=1CCiFqekHnUWbBYCTpaquy983rgYkDGPLz6Vtn/52JI=;
+	h=To:From:Subject;
+	b=EX2KjoAaHzMHtG4BDO9C+aGxt3KT9SfSUc6PxoS1oxfd7uQ1/Dc965nRoFRRzf5Eb
+	 u3fGzoWsHIgw3eI8CwYtJEi/lpX0/2M+0+mZmM2g0bRDXse+BCh3wXUcMgK9PaSea1
+	 K+WDkFZE4RXL/yQEzXMXQd/psYs3KaID7ih5pTpMACSwuVj7zBOgEe7lJd0roq7lJh
+	 zbE2NX+EUFBKuYOn3PI/4V9XbMw9zvIJEC9TtPXPXhMTgH1wwXrTvaj3ITLOsp9I/U
+	 QOVt98oTzbL+3Q/YJW92j73BbyWOroK7dGMsmLJXazikvbXvBlgNSjNtVRHrhgRaBp
+	 663e8dPE1a5AQ==
+Date: Sun, 26 Apr 2026 00:39:45 +0100
+To: abdulla@mail.local
+From: viserys@mail.local
+Subject: Meeting tomorrow
+X-MS-Reactions: disallow
+Message-Id: <20260426003945.037574@abdullas-macbook-air-2.local>
+X-Spam-Status: No
+X-Spam-Score: 0.0511
+X-Spam-Model: baseline
+
+hdr:
+Return-Path: <viserys@mail.local>
+Delivered-To: abdulla@mail.local
+Received: from mailserver.docker.local
+	by mailserver.docker.local with LMTP
+	id gKQKOv5Q7WnGBwAAb7l45A
+	(envelope-from <viserys@mail.local>)
+	for <abdulla@mail.local>; Sat, 25 Apr 2026 23:40:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.local; s=mail;
+	t=1777160446; bh=H5yyku6e2bpW+wS1/TDgK93TtFFWDGdlOeF7FJjmlwk=;
+	h=To:From:Subject;
+	b=agtQywNif5evUWSoltZxQx+8Vn8yaOipZxCjAUtG+MrOuy1GmgUPuI6falg3j+jvB
+	 JBT4bPyMAEAcsOGlHXPXNRKWPUMssjnhBz7B7KOuIaYcSEHV01KwJBUoysYc4hVa2+
+	 9O2301RGvFn9EG/aDTVjtSDupbpBwYBo2FRA1Etn6ExqgpKsc4oLV+6xSAGkVYAGRB
+	 FH3OErgIk5rpVo5k5gWRmO7a82qSpKGwwO2UqtqGg6/b1mvGfsUefEjxqvtAn4f51o
+	 NkjRxf3X+lznS0984pC066RiuXeWH/Q3mWMuGgVXpO671teoK+7EG5LnQJnW4PZ1b3
+	 x5Eic/K/aOsKg==
+Date: Sun, 26 Apr 2026 00:39:46 +0100
+To: abdulla@mail.local
+From: viserys@mail.local
+Subject: Your invoice and account update
+X-MS-Reactions: disallow
+Message-Id: <20260426003946.037577@abdullas-macbook-air-2.local>
+
+hdr:
+Return-Path: <viserys@mail.local>
+Delivered-To: abdulla@mail.local
+Received: from mailserver.docker.local
+	by mailserver.docker.local with LMTP
+	id GljHK8ZV7WlxBAAAb7l45A
+	(envelope-from <viserys@mail.local>)
+	for <abdulla@mail.local>; Sun, 26 Apr 2026 00:01:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.local; s=mail;
+	t=1777161670; bh=1CCiFqekHnUWbBYCTpaquy983rgYkDGPLz6Vtn/52JI=;
+	h=To:From:Subject;
+	b=l76AVJkFXFLRZSYA+tI8d+9MxU0xe4fTJ4Gqn1R1cabrNn9uYinkzhOBXqI1l9zS8
+	 sxV8hp4ISqSVnfpdD2fbKeXRWwBcLd5XONwVkxe+TNP0yuCFFgsWigyn+9qQe8QTK3
+	 5Ff/OMKssqISTI4gnLb0FD5HYLAkOTaC/dCncgm6RqvX0y9sLrwYhJ4FbbE9Nb/OyU
+	 wt9+hPvoXYVqTAPGk5yJc4FVa2JhG/nyTSR/FA190bs0Y3Wlzsn6FTPBVd7MHdXOLy
+	 E8++IzBEGZ2SJK4/ozuDVn4Flh+5U1TKlTBEigd25mbNDPnjZdQrvzW1QH7C9c/2py
+	 sTK7MNrfKuJgw==
+Date: Sun, 26 Apr 2026 01:01:10 +0100
+To: abdulla@mail.local
+From: viserys@mail.local
+Subject: Meeting tomorrow
+X-MS-Reactions: disallow
+Message-Id: <20260426010110.037983@abdullas-macbook-air-2.local>
+X-Spam-Status: No
+X-Spam-Score: 0.0511
+X-Spam-Model: baseline
+
+hdr:
+Return-Path: <viserys@mail.local>
+Delivered-To: abdulla@mail.local
+Received: from mailserver.docker.local
+	by mailserver.docker.local with LMTP
+	id J/EuD3tW7WmBBQAAb7l45A
+	(envelope-from <viserys@mail.local>)
+	for <abdulla@mail.local>; Sun, 26 Apr 2026 00:04:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.local; s=mail;
+	t=1777161851; bh=H5yyku6e2bpW+wS1/TDgK93TtFFWDGdlOeF7FJjmlwk=;
+	h=To:From:Subject;
+	b=Bv3jZy85bxnG2diRDDNQr/e7gpFySBk5arRl9w8IV7OXCQ4RcekgDmpAOEnWALSjg
+	 faGSEM+P3mMzIg7D0G/qdUJc3r8DOnzNIk4+EAmLYpefClrOFtkALQu8UbpU5QitTv
+	 +UIkZ/znbky4DMo0Fw54Oj5+47P6TjuxYq8PRKmIYMWx9V4zFzHnI6pGNIFbfyi4KU
+	 um2MeP6bcNCQwfZJCSFl7LG6wU8j1VN27o8AIg1/U2xdKbKHpaC5GQqyzTh538YlgT
+	 wTnDA8axoQwYAENN4UiWWfDlSwplLk8b6IdB108uIjaElY+27/ymcUcNL4EOvJxOdS
+	 IzrFh+ie0zDQg==
+Date: Sun, 26 Apr 2026 01:01:11 +0100
+To: abdulla@mail.local
+From: viserys@mail.local
+Subject: Your invoice and account update
+X-MS-Reactions: disallow
+Message-Id: <20260426010111.037986@abdullas-macbook-air-2.local>
+
+hdr:
+Return-Path: <viserys@mail.local>
+Delivered-To: abdulla@mail.local
+Received: from mailserver.docker.local
+	by mailserver.docker.local with LMTP
+	id m2c+BU9c7WlBDgAAb7l45A
+	(envelope-from <viserys@mail.local>)
+	for <abdulla@mail.local>; Sun, 26 Apr 2026 00:29:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.local; s=mail;
+	t=1777163343; bh=1CCiFqekHnUWbBYCTpaquy983rgYkDGPLz6Vtn/52JI=;
+	h=To:From:Subject;
+	b=bymXpQe0XJ3XAF6kkZj2VrQL/2TcjjKr4rcnGoXdY5UIonrnq3TbYMxTCVNIXEy2L
+	 CfSGBc+byyGdDfiGe1mfJfrsc1yAP/KNVJ8CJxEb+sUZ8wCiKipL1JA8Sk7gsrARYG
+	 N5aebdeF+JOvCB9vkhG83K7xLxuWjXxjwcbXJy6Aw4C9hXjbas6SGvhY4PXg9b4GxT
+	 icY/WrTCwqswzklaltKzgVTjK34wMumlNnzEqiuCEg0vgn/wmremPNvwVvMeMTafKE
+	 pGa3dADEiS8StRdpRZ6F5YHnab97T5yYzoCWqxWncdgd7z7WNbHCpgGC7i19E7G9q7
+	 9S4VCuztCAv7A==
+Date: Sun, 26 Apr 2026 01:29:02 +0100
+To: abdulla@mail.local
+From: viserys@mail.local
+Subject: Meeting tomorrow
+X-MS-Reactions: disallow
+Message-Id: <20260426012902.038962@abdullas-macbook-air-2.local>
+X-Spam-Status: No
+X-Spam-Score: 0.0511
+X-Spam-Model: baseline
+
+hdr:
+Return-Path: <viserys@mail.local>
+Delivered-To: abdulla@mail.local
+Received: from mailserver.docker.local
+	by mailserver.docker.local with LMTP
+	id plgRHwNd7WlRDwAAb7l45A
+	(envelope-from <viserys@mail.local>)
+	for <abdulla@mail.local>; Sun, 26 Apr 2026 00:32:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.local; s=mail;
+	t=1777163523; bh=H5yyku6e2bpW+wS1/TDgK93TtFFWDGdlOeF7FJjmlwk=;
+	h=To:From:Subject;
+	b=e+YHMIsFe4m5hZyVSB7EjX02qa16A6X0Bfbzf8LxHhUh4uCQ/59JfODXh68UkFCY3
+	 lRhZTl7BXGmOwzMBUa9gRur6MAEC1HsZ+14mVaAfRo4+EF3cKQ9J6xVewyB49mdolZ
+	 xwIn8ofm3Ww3rjDoRHikxaMU6O1fuvcy6FIS+mycH/hDmlA75EMXQ78/eAPYd2IDJD
+	 9pPq7apML0aSoweweRuC02OBRrRR4o8lyuyZULTSFidH+hqpzWiX/bpEHZAcAXigIF
+	 riJ84aaO9b5DZHVGMTwUIM5oinyZyJbuj6aQ1p/FrGLfxa8+VT93S0B+ptYZ165BDs
+	 MoCfWwozCa6+Q==
+Date: Sun, 26 Apr 2026 01:29:03 +0100
+To: abdulla@mail.local
+From: viserys@mail.local
+Subject: Your invoice and account update
+X-MS-Reactions: disallow
+Message-Id: <20260426012903.038965@abdullas-macbook-air-2.local>
+
+hdr:
+Return-Path: <viserys@mail.local>
+Delivered-To: abdulla@mail.local
+Received: from mailserver.docker.local
+	by mailserver.docker.local with LMTP
+	id 8iSyMjJl7WnnBAAAb7l45A
+	(envelope-from <viserys@mail.local>)
+	for <abdulla@mail.local>; Sun, 26 Apr 2026 01:06:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.local; s=mail;
+	t=1777165618; bh=H5yyku6e2bpW+wS1/TDgK93TtFFWDGdlOeF7FJjmlwk=;
+	h=To:From:Subject;
+	b=Iu0oDnrAPmfjPWBsVF9b2o69bofyyz1XiACntRyN5oa9SMeuYFxYAjlJp8axQpp2z
+	 7k17ZPq+BYtKwwd4sJd6bTqviTENshaOme06NI9D1Cnnh2N+RUN8sV7VjS5uupUuwC
+	 /xQTIvrYYEpGnNNIGVdhpEEztKarBUXQwqNkYhlB+GVEPtyOEEjPddXorwN8h01dEa
+	 j32nbICSK9DQ8tBZoQ8oO08sUtLGXzW8C/VTuep9Jjx4OxdRc4JeOEjkIpatBlyHhN
+	 65j8qxF4og6EIQlB34E2ynCx/+zEnxT7wcN9l62zylFPoAVUKFkm8luAf45PzlaPj1
+	 966xRNwVHqg2g==
+Date: Sun, 26 Apr 2026 02:03:58 +0100
+To: abdulla@mail.local
+From: viserys@mail.local
+Subject: Your invoice and account update
+X-MS-Reactions: disallow
+Message-Id: <20260426020358.041178@abdullas-macbook-air-2.local>
+
+hdr:
+Return-Path: <viserys@mail.local>
+Delivered-To: abdulla@mail.local
+Received: from mailserver.docker.local
+	by mailserver.docker.local with LMTP
+	id k+fyEohv8mkzCgAAb7l45A
+	(envelope-from <viserys@mail.local>)
+	for <abdulla@mail.local>; Wed, 29 Apr 2026 20:52:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.local; s=mail;
+	t=1777495944; bh=rnQLCKKSZC3QgefemBzNOtJR3jcnsucHHiOf+gmefrI=;
+	h=To:From:Subject;
+	b=QBH4dIEc85a6vCeBUKgwN5w8Biv9vJ10+k9eTT+jSASSNH5HQIdd5HTJm4ASttX2h
+	 xDQjs7AdZ10iytHh1sJDp6faVqtOnqVSG9jq6aOkyqu+1bX905VyuZCGxaga14Br32
+	 fstvQMTfEd6G58OqujajZCLT6qA0TR/rR5hGE/LzzhfoxOVOsTDVkvqG9w7wfTTCAm
+	 lwZ0+wK/BHd2aAYtcqlUqI3cVNy8nNvULhaHLo5/AEckNpExyQAaBMlfVpClZBKOaJ
+	 JUUEnUtOZKQIE0g9ur6iLMBET1Nv3XeQiXpkj+NbIN3GLsBnCZ4P9GFLf7QqreA0TD
+	 v1pILyCZ+yleQ==
+Date: Wed, 29 Apr 2026 21:52:23 +0100
+To: abdulla@mail.local
+From: viserys@mail.local
+Subject: Auth chain test 2026-04-29
+X-MS-Reactions: disallow
+Message-Id: <20260429215223.020811@abdullas-macbook-air-2.local>
+X-Spam-Status: No
+X-Spam-Score: 0.0006
+X-Spam-Model: distilbert
+

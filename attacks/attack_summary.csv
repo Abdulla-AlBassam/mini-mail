@@ -1,0 +1,10 @@
+attack,intensity,total_spam,spam_modified,modification_pct,metric,metric_value,filename
+Character Perturbation,light,3424,3419,99.85,avg_char_diff_rate,0.0827,test_char_light.csv
+Character Perturbation,medium,3424,3422,99.94,avg_char_diff_rate,0.1641,test_char_medium.csv
+Character Perturbation,heavy,3424,3422,99.94,avg_char_diff_rate,0.3146,test_char_heavy.csv
+Synonym Substitution,light,3424,2383,69.6,avg_word_diff_rate,0.0125,test_synonym_light.csv
+Synonym Substitution,medium,3424,2794,81.6,avg_word_diff_rate,0.0207,test_synonym_medium.csv
+Synonym Substitution,heavy,3424,3049,89.05,avg_word_diff_rate,0.032,test_synonym_heavy.csv
+Text Dilution,light,3424,3424,100.0,avg_words_injected,3.0,test_dilution_light.csv
+Text Dilution,medium,3424,3424,100.0,avg_words_injected,7.0,test_dilution_medium.csv
+Text Dilution,heavy,3424,3424,100.0,avg_words_injected,12.0,test_dilution_heavy.csv

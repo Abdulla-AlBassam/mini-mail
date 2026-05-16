@@ -1,0 +1,39 @@
+=== Trying localhost:587...
+=== Connected to localhost.
+<-  220 mailserver.docker.local ESMTP
+ -> EHLO abdullas-macbook-air-2.local
+<-  250-mailserver.docker.local
+<-  250-PIPELINING
+<-  250-SIZE 10240000
+<-  250-ETRN
+<-  250-STARTTLS
+<-  250-ENHANCEDSTATUSCODES
+<-  250-8BITMIME
+<-  250-DSN
+<-  250 CHUNKING
+ -> STARTTLS
+<-  220 2.0.0 Ready to start TLS
+=== TLS started with cipher TLSv1.3:AEAD-AES256-GCM-SHA384:256
+=== TLS client certificate not requested and not sent
+=== TLS no client certificate set
+=== TLS peer[0]   subject=[/C=GB/ST=Tyne and Wear/L=Newcastle/O=Northumbria University/OU=Dissertation Project/CN=mailserver]
+===               commonName=[mailserver], subjectAltName=[DNS:mailserver, DNS:mailserver.docker.local, DNS:localhost, DNS:mail.local, IP Address:127.0.0.1] notAfter=[2027-01-25T20:08:40Z]
+=== TLS peer certificate failed CA verification (unable to get local issuer certificate), passed host verification (using host localhost to verify)
+ ~> EHLO abdullas-macbook-air-2.local
+<~  250-mailserver.docker.local
+<~  250-PIPELINING
+<~  250-SIZE 10240000
+<~  250-ETRN
+<~  250-AUTH PLAIN LOGIN
+<~  250-AUTH=PLAIN LOGIN
+<~  250-ENHANCEDSTATUSCODES
+<~  250-8BITMIME
+<~  250-DSN
+<~  250 CHUNKING
+ ~> MAIL FROM:<external@external.com>
+<~  250 2.1.0 Ok
+ ~> RCPT TO:<abdulla@mail.local>
+<~* 554 5.7.1 <unknown[172.20.0.1]>: Client host rejected: Access denied
+ ~> QUIT
+<~  221 2.0.0 Bye
+=== Connection closed with remote host.

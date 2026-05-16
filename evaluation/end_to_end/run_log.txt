@@ -1,0 +1,60 @@
+
+=== 2026-05-05T22:26:58 ===
+[e2e] run_tag=20b5cf83 input=attacks/test_char_light.csv sample=100
+[e2e] waiting 8s for milter + Sieve to settle
+[e2e] fetched 100 messages
+[e2e] summary: {'sent': 100, 'delivered': 100, 'spam_routed_to_junk': '50/50', 'ham_routed_to_inbox': '50/50'}
+[e2e] wrote evaluation/end_to_end/test_char_light_e2e.csv
+
+=== 2026-05-05T22:27:45 ===
+[e2e] run_tag=8774c77d input=attacks/test_char_medium.csv sample=100
+[e2e] waiting 8s for milter + Sieve to settle
+[e2e] fetched 100 messages
+[e2e] summary: {'sent': 100, 'delivered': 100, 'spam_routed_to_junk': '50/50', 'ham_routed_to_inbox': '50/50'}
+[e2e] wrote evaluation/end_to_end/test_char_medium_e2e.csv
+
+=== 2026-05-05T22:28:31 ===
+[e2e] run_tag=f073b201 input=attacks/test_char_heavy.csv sample=100
+[e2e] waiting 8s for milter + Sieve to settle
+[e2e] fetched 100 messages
+[e2e] summary: {'sent': 100, 'delivered': 100, 'spam_routed_to_junk': '50/50', 'ham_routed_to_inbox': '50/50'}
+[e2e] wrote evaluation/end_to_end/test_char_heavy_e2e.csv
+
+=== 2026-05-05T22:29:19 ===
+[e2e] run_tag=037c6af1 input=attacks/test_synonym_light.csv sample=100
+[e2e] waiting 8s for milter + Sieve to settle
+[e2e] fetched 100 messages
+[e2e] summary: {'sent': 100, 'delivered': 100, 'spam_routed_to_junk': '50/50', 'ham_routed_to_inbox': '50/50'}
+[e2e] wrote evaluation/end_to_end/test_synonym_light_e2e.csv
+
+=== 2026-05-05T22:30:04 ===
+[e2e] run_tag=bfcfc065 input=attacks/test_synonym_medium.csv sample=100
+[e2e] waiting 8s for milter + Sieve to settle
+[e2e] fetched 100 messages
+[e2e] summary: {'sent': 100, 'delivered': 100, 'spam_routed_to_junk': '50/50', 'ham_routed_to_inbox': '50/50'}
+[e2e] wrote evaluation/end_to_end/test_synonym_medium_e2e.csv
+
+=== 2026-05-05T22:30:50 ===
+[e2e] run_tag=76ddfad4 input=attacks/test_synonym_heavy.csv sample=100
+[e2e] waiting 8s for milter + Sieve to settle
+[e2e] fetched 100 messages
+[e2e] summary: {'sent': 100, 'delivered': 100, 'spam_routed_to_junk': '50/50', 'ham_routed_to_inbox': '50/50'}
+[e2e] wrote evaluation/end_to_end/test_synonym_heavy_e2e.csv
+
+=== 2026-05-05T22:31:35 ===
+[e2e] run_tag=86c4fb11 input=attacks/test_dilution_light.csv sample=100
+[e2e] waiting 8s for milter + Sieve to settle
+[e2e] fetched 100 messages
+[e2e] summary: {'sent': 100, 'delivered': 100, 'spam_routed_to_junk': '50/50', 'ham_routed_to_inbox': '50/50'}
+[e2e] wrote evaluation/end_to_end/test_dilution_light_e2e.csv
+
+=== 2026-05-05T22:32:22 ===
+[e2e] run_tag=ed2565f4 input=attacks/test_dilution_medium.csv sample=100
+[e2e] waiting 8s for milter + Sieve to settle
+[e2e] fetched 100 messages
+[e2e] summary: {'sent': 100, 'delivered': 100, 'spam_routed_to_junk': '48/50', 'ham_routed_to_inbox': '50/50'}
+[e2e] wrote evaluation/end_to_end/test_dilution_medium_e2e.csv
+
+=== dilution_heavy: generated in earlier run prior to log start ===
+[e2e] CSV at evaluation/end_to_end/test_dilution_heavy_e2e.csv (timestamp 2026-05-05T22:18)
+[e2e] summary (recovered from CSV): {'spam_routed_to_junk': '48/50', 'ham_routed_to_inbox': '50/50'}
