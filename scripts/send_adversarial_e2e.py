@@ -102,7 +102,7 @@ def send_one(smtp, run_tag, idx, text, label):
     The email is built as a raw string rather than going through email.mime.
     This is deliberate, and not obvious: MIMEText with an explicit charset
     forces the body to be base64-encoded. The milter's extract_text_from_body
-    (milter/spam_milter.py:152) parses raw body bytes only and does not
+    (milter/spam_milter.py:157) parses raw body bytes only and does not
     see Content-Transfer-Encoding. So a base64'd body arrives at the
     classifier as opaque ASCII gibberish ("VGhpcyBp...") and biases every
     prediction toward spam, which silently breaks every result.
@@ -138,7 +138,7 @@ def fetch_run(run_tag):
     X-Spam-Status: Yes into Junk, so where each message landed is itself
     a piece of evidence. Two things are being verified at once:
       - The milter's headers (X-Spam-Status, X-Spam-Score, X-Spam-Model
-        written by milter/spam_milter.py:256-258).
+        written by milter/spam_milter.py:265-267).
       - That the Sieve rule acted on those headers correctly.
 
     Mailbox is opened read-only so this script can never accidentally

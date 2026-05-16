@@ -11,13 +11,13 @@ and then went silent. The SMTP client timed out at 30 seconds, Postfix waited th
 
 ## Diagnostic process
 
-The milter's `eom()` callback wraps classification in a `try/except` that logs any thrown exception (`milter/spam_milter.py:265`). No error message was logged, which ruled out an exception and pointed at a deadlock instead.
+The milter's `eom()` callback wraps classification in a `try/except` that logs any thrown exception (`milter/spam_milter.py:274-275`). No error message was logged, which ruled out an exception and pointed at a deadlock instead.
 
 Two diagnostic tests isolated the cause:
 
 1. **Standalone benchmark.** `ml/bench_distilbert.py` calls `DistilBertSpamClassifier.predict()` directly inside the same container. It returned in around 50 ms after warmup. So inference itself was not the problem; the problem was the calling context (running inside a libmilter thread).
 
-2. **Live py-spy dump.** A `py-spy dump` against the running process (saved to `drafts/py_spy_wedged_stack.txt`) showed a libmilter worker thread suspended inside `BatchEncoding.to(self.device)` at `predict.py:182`.
+2. **Live py-spy dump.** A `py-spy dump` against the running process (saved to `drafts/py_spy_wedged_stack.txt`) showed a libmilter worker thread suspended inside `BatchEncoding.to(self.device)` at `predict.py:193`.
 
 ## Root cause
 
