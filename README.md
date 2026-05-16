@@ -35,10 +35,11 @@ Written during development to aid writing and testing, along with reproducibilit
 - Python 3.11 or higher
 - pip (comes with Python)
 
-### Step 1: Open a terminal and navigate to the project folder
+### Step 1: Clone the repo and enter the folder
 
 ```bash
-cd dissertation-project
+git clone https://github.com/Abdulla-AlBassam/mini-mail.git
+cd mini-mail
 ```
 
 ### Step 2: Create a Python virtual environment
@@ -79,14 +80,14 @@ The Enron spam dataset (49 MB) is not in git because of its size. It needs to li
 ml/data/raw/enron_spam_data.csv
 ```
 
-If the project arrived as a zip, the CSV should already be there. If it was cloned from git, grab it from Kaggle and drop it in that path.
+Grab the Enron-Spam CSV from Kaggle and drop it at that path.
 
 ### Step 6: Register the Jupyter kernel
 
 This points Jupyter at the venv's Python and libraries so the notebooks can find them.
 
 ```bash
-python -m ipykernel install --user --name=dissertation --display-name="Dissertation (Python 3.13)"
+python -m ipykernel install --user --name=dissertation --display-name="Mini-Mail (Python 3.11+)"
 ```
 
 ### Step 7: Run the Exploratory Data Analysis notebook
@@ -95,7 +96,7 @@ python -m ipykernel install --user --name=dissertation --display-name="Dissertat
 jupyter notebook ml/notebooks/01_exploratory_data_analysis.ipynb
 ```
 
-Pick the "Dissertation (Python 3.13)" kernel when asked. Run all cells (Kernel > Restart & Run All). The notebook prints class balance, length distributions, and a couple of word-frequency charts.
+Pick the "Mini-Mail (Python 3.11+)" kernel when asked. Run all cells (Kernel > Restart & Run All). The notebook prints class balance, length distributions, and a couple of word-frequency charts.
 
 ### Step 8: Run the Baseline Model notebook
 
